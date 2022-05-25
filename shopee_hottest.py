@@ -1,8 +1,7 @@
-
-
 import requests as req
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
+
 header = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
 }
@@ -11,7 +10,8 @@ for index in range(5):
     url = url + str(index)
     r = req.get(url, headers=header)
     root_json = r.json()
-    print("-------------------------")
+    print("-----------------test" + str(index )+ "--------")
     num = 1
     for data in root_json['items']:
-        print(str(data['item_basic']['shopid'])+"，"+data['item_basic']['name']+":"+str(data['item_basic']['price']))
+        print(str(data['item_basic']['shopid']) + "，" + data['item_basic']['name'] + ":" + str(
+            data['item_basic']['price']))
