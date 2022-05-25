@@ -1,3 +1,5 @@
+import time
+
 import requests as req
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
@@ -13,5 +15,5 @@ for index in range(5):
     print("-----------------test" + str(index )+ "--------")
     num = 1
     for data in root_json['items']:
-        print(str(data['item_basic']['shopid']) + "，" + data['item_basic']['name'] + ":" + str(
-            data['item_basic']['price']))
+        print(str(data['item_basic']['shopid']) + "，" + data['item_basic']['name'] + ":" + str(data['item_basic']['price']))
+
